@@ -22,12 +22,14 @@ const muiTheme = getMuiTheme({
 
 export default () => (
   <MuiThemeProvider muiTheme={muiTheme}>
-    <AppBarTop/>
-    <FilterCard />
-    <style jsx global>{`
-      body {
-        margin: 0
-      }
-    `}</style>
+    <div>
+      <AppBarTop/>
+      <FilterCard />
+      <style jsx global>{`
+        body {
+          margin: 0
+        }
+      `}</style>
+    </div>
   </MuiThemeProvider>
 );
