@@ -5,13 +5,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import Basic from '../components/basic'
-import {green100, green500, green700} from 'material-ui/styles/colors';
+import CheckList from '../components/checklist'
+import {blueGrey500, blueGrey700, blueGrey100} from 'material-ui/styles/colors';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: green500,
-    primary2Color: green700,
-    primary3Color: green100,
+    primary1Color: blueGrey500,
+    primary2Color: blueGrey700,
+    primary3Color: blueGrey100,
   },
 }, {
   avatar: {
@@ -23,7 +24,11 @@ const muiTheme = getMuiTheme({
 export default () => (
   <MuiThemeProvider muiTheme={muiTheme}>
     <AppBar title="My AppBar" />
-    <h1>Hello World</h1>
-    <Basic/>
+    <CheckList />
+    <style jsx global>{`
+      body {
+        margin: 0
+      }
+    `}</style>
   </MuiThemeProvider>
 );
