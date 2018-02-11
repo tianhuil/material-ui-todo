@@ -43,7 +43,7 @@ export default class CheckList extends React.Component {
         </TableHeader>
         <TableBody displayRowCheckbox={false}>
           { this.state.todos.filter(this.props.filterFunc).map(todo =>
-          <TableRow>
+          <TableRow key={todo.id}>
             <TableRowColumn>
               <Checkbox
                 checked={todo.done}
