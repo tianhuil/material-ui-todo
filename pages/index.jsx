@@ -6,6 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBarTop from '../components/appbar'
 import FilterCard from '../components/filtercard'
 import {blueGrey500, blueGrey700, blueGrey100} from 'material-ui/styles/colors';
+import Head from 'next/head'
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -22,6 +23,10 @@ const muiTheme = getMuiTheme({
 
 export default () => (
   <MuiThemeProvider muiTheme={muiTheme}>
+    <Head>
+      <title>Todo App</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
     <div>
       <AppBarTop/>
       <FilterCard />
