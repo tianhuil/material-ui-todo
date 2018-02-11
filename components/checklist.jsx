@@ -9,7 +9,7 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import {Card, CardTitle, CardText} from 'material-ui/Card';
+
 
 export default class CheckList extends React.Component {
   constructor(props) {
@@ -34,36 +34,31 @@ export default class CheckList extends React.Component {
 
   render() {
     return (
-      <Card style={{margin: "24px" }}>
-        <CardTitle title="Todos" subtitle="Todo List" />
-        <CardText>
-          <Table>
-            <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-              <TableRow>
-                <TableHeaderColumn>Done</TableHeaderColumn>
-                <TableHeaderColumn>Item</TableHeaderColumn>
-              </TableRow>
-            </TableHeader>
-            <TableBody displayRowCheckbox={false}>
-              { this.state.todos.map(todo =>
-              <TableRow>
-                <TableRowColumn>
-                  <Checkbox
-                    checked={todo.done}
-                    onCheck={this.toggleTodo.bind(this, todo.id)}
-                  />
-                </TableRowColumn>
-                <TableRowColumn>
-                  <div style={todo.done ? {textDecoration: "line-through"} : {} }>
-                    {todo.name}
-                  </div>
-                </TableRowColumn>
-              </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </CardText>
-      </Card>
+      <Table>
+        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+          <TableRow>
+            <TableHeaderColumn>Done</TableHeaderColumn>
+            <TableHeaderColumn>Item</TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+        <TableBody displayRowCheckbox={false}>
+          { this.state.todos.filter(this.props.filterFunc).map(todo =>
+          <TableRow>
+            <TableRowColumn>
+              <Checkbox
+                checked={todo.done}
+                onCheck={this.toggleTodo.bind(this, todo.id)}
+              />
+            </TableRowColumn>
+            <TableRowColumn>
+              <div style={todo.done ? {textDecoration: "line-through"} : {} }>
+                {todo.name}
+              </div>
+            </TableRowColumn>
+          </TableRow>
+          )}
+        </TableBody>
+      </Table>
     )
   }
 }
