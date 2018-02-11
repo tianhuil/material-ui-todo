@@ -4,7 +4,6 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
-import Basic from '../components/basic'
 import CheckList from '../components/checklist'
 import {blueGrey500, blueGrey700, blueGrey100} from 'material-ui/styles/colors';
 
