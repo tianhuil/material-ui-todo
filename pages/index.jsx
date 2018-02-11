@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import AppBar from 'material-ui/AppBar';
 import CheckList from '../components/checklist'
+import AppBarTop from '../components/appbar'
 import {blueGrey500, blueGrey700, blueGrey100} from 'material-ui/styles/colors';
 
 const muiTheme = getMuiTheme({
@@ -22,7 +22,7 @@ const muiTheme = getMuiTheme({
 
 export default () => (
   <MuiThemeProvider muiTheme={muiTheme}>
-    <AppBar title="My AppBar" />
+    <AppBarTop/>
     <CheckList />
     <style jsx global>{`
       body {
